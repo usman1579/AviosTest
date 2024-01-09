@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home component renders correctly 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "white",
+      "flex": 1,
+      "padding": 20,
+    }
+  }
+>
+  <Text
+    style={
+      {
+        "color": "black",
+        "fontSize": 16,
+        "fontWeight": "500",
+      }
+    }
+  >
+    Welcome back
+  </Text>
+  <Text
+    style={
+      {
+        "fontSize": 26,
+        "fontWeight": "bold",
+        "marginVertical": 10,
+      }
+    }
+  >
+    John  
+    <MaterialCommunityIcons
+      name="hand-wave-outline"
+      size={24}
+    />
+  </Text>
+  <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "alignSelf": "center",
+        "backgroundColor": "white",
+        "borderRadius": 10,
+        "elevation": 5,
+        "flexDirection": "row",
+        "height": 70,
+        "marginVertical": 10,
+        "opacity": 1,
+        "shadowColor": "#000",
+        "shadowOffset": {
+          "height": 2,
+          "width": 0,
+        },
+        "shadowOpacity": 0.25,
+        "shadowRadius": 3.84,
+        "width": "100%",
+      }
+    }
+    testID="TouchPress"
+  >
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }
+    >
+      <Ionicons
+        color="black"
+        name="cube-outline"
+        size={24}
+      />
+    </View>
+    <View
+      style={
+        {
+          "flex": 4,
+          "justifyContent": "center",
+          "marginHorizontal": 10,
+        }
+      }
+    >
+      <Text
+        style={
+          {
+            "fontSize": 16,
+            "fontWeight": "500",
+          }
+        }
+      >
+        Balance
+         
+        <Text
+          style={
+            {
+              "fontSize": 16,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          100
+        </Text>
+      </Text>
+    </View>
+    <View
+      style={
+        {
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }
+    >
+      <Ionicons
+        color="blue"
+        name="chevron-forward"
+        size={24}
+      />
+    </View>
+  </View>
+</View>
+`;

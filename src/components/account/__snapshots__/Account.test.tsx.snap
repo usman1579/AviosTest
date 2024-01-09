@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Account component renders correctly 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "white",
+      "flex": 1,
+      "padding": 20,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "margin": 20,
+      }
+    }
+  >
+    <Text
+      style={
+        {
+          "fontSize": 20,
+          "fontWeight": "bold",
+        }
+      }
+    >
+      FirstName
+    </Text>
+    <Text
+      style={
+        {
+          "color": "grey",
+          "fontSize": 16,
+          "fontWeight": "500",
+          "margin": 5,
+          "marginLeft": 20,
+        }
+      }
+    >
+      John
+    </Text>
+  </View>
+  <View
+    style={
+      {
+        "margin": 20,
+      }
+    }
+  >
+    <Text
+      style={
+        {
+          "fontSize": 20,
+          "fontWeight": "bold",
+        }
+      }
+    >
+      LastName
+    </Text>
+    <Text
+      style={
+        {
+          "color": "grey",
+          "fontSize": 16,
+          "fontWeight": "500",
+          "margin": 5,
+          "marginLeft": 20,
+        }
+      }
+    >
+      Doe
+    </Text>
+  </View>
+  <View
+    style={
+      {
+        "margin": 20,
+      }
+    }
+  >
+    <Text
+      style={
+        {
+          "fontSize": 20,
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Email
+    </Text>
+    <Text
+      style={
+        {
+          "color": "grey",
+          "fontSize": 16,
+          "fontWeight": "500",
+          "margin": 5,
+          "marginLeft": 20,
+        }
+      }
+    >
+      john.doe@example.com
+    </Text>
+  </View>
+  <View
+    style={
+      {
+        "margin": 20,
+      }
+    }
+  >
+    <Text
+      style={
+        {
+          "fontSize": 20,
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Avious Points
+    </Text>
+    <Text
+      style={
+        {
+          "color": "grey",
+          "fontSize": 16,
+          "fontWeight": "500",
+          "margin": 5,
+          "marginLeft": 20,
+        }
+      }
+    >
+      100
+    </Text>
+  </View>
+</View>
+`;
