@@ -4,16 +4,14 @@ import { useAppSelector } from '@/store/hooks';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { selectMember } from '@/slices/auth';
-
-type Props = {
-  onPress: () => void;
-};
+import { MAIN_ROUTES } from '@/navigation/types';
 
 const WELCOMEBACK = 'Welcome back';
 const BALANCE = 'Balance';
 
-export function Home({ onPress }: Props) {
+export function Home({ navigation }: any) {
   const member = useAppSelector(selectMember);
+  const onPress = () => navigation.navigate(MAIN_ROUTES.ACCOUNT);
 
   return (
     <View style={styles.root}>

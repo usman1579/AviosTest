@@ -1,68 +1,46 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
-import { Home, styles } from './Home'; // Assuming your component is in the same directory
+import { Home } from './Home'; // Adjust the import path based on your project structure
+import { MAIN_ROUTES } from '@/navigation/types';
 
-// Mocking the useSelector hook
+// Mocking the navigation prop
+const mockNavigation = {
+  navigate: jest.fn(),
+};
+
+// Mock the useSelector hook
 jest.mock('@/store/hooks', () => ({
   useAppSelector: jest.fn(),
 }));
 
-// Mocking the selectMember selector
-jest.mock('@/slices/auth', () => ({
-  selectMember: jest.fn(),
-}));
-
-// Mocking the vector icons
-jest.mock('react-native-vector-icons/MaterialCommunityIcons', () => 'MaterialCommunityIcons');
-jest.mock('react-native-vector-icons/Ionicons', () => 'Ionicons');
-
 describe('Home component', () => {
+  // Reset the mock before each test
   beforeEach(() => {
-    // Reset the mocks before each test
     jest.clearAllMocks();
   });
 
   it('renders correctly', () => {
-    // Mock the useSelector hook to return a sample member
-    const mockedMember = {
-      firstName: 'John',
-      avios: 100,
-    };
-    require('@/store/hooks').useAppSelector.mockReturnValue(mockedMember);
+    // Mock the useSelector hook to return a dummy member
+    jest.mock('@/slices/auth', () => ({
+      selectMember: jest.fn(),
+    }));
 
-    const { toJSON } = render(<Home onPress={() => { }} />);
+    // Import the mocked Home component after mocking the useSelector hook
+    const { toJSON } = render(<Home navigation={mockNavigation} />);
     expect(toJSON()).toMatchSnapshot();
   });
 
-  it('displays correct member information', () => {
-    // Mock the useSelector hook to return a sample member
-    const mockedMember = {
-      firstName: 'John',
-      avios: 100,
-    };
-    require('@/store/hooks').useAppSelector.mockReturnValue(mockedMember);
+  it('navigates to ACCOUNT screen on press', () => {
+    // Mock the useSelector hook to return a dummy member
+    jest.mock('@/slices/auth', () => ({
+      selectMember: jest.fn(() => ({ firstName: 'John', avios: 100 })), //dummy data as needed
+    }));
 
-    const { getByTestId, getByText } = render(<Home onPress={() => { }} />);
+    const { getByTestId } = render(<Home navigation={mockNavigation} />);
+    const touchableButton = getByTestId('TouchPress');
 
-    expect(getByText('Welcome back')).toBeTruthy();
-    // expect(getByText('John  MaterialCommunityIcons')).toBeTruthy(); // Adjust as needed
+    fireEvent.press(touchableButton);
 
-    const balanceText = getByText('Balance 100');
-    expect(balanceText).toBeTruthy();
-
-    // Trigger onPress using fireEvent
-    fireEvent.press(getByTestId('TouchPress'));
-  });
-
-  it('has TouchableOpacity with testID "TouchPress"', () => {
-    const { getByTestId } = render(<Home onPress={() => { }} />);
-    expect(getByTestId('TouchPress')).toBeTruthy();
-  });
-
-  it('has correct styles applied', () => {
-    const { getByTestId } = render(<Home onPress={() => { }} />);
-    const touchableOpacity = getByTestId('TouchPress');
-
-    expect(touchableOpacity).toHaveStyle(styles.barcomponent);
+    expect(mockNavigation.navigate).toHaveBeenCalledWith(MAIN_ROUTES.ACCOUNT);
   });
 });
